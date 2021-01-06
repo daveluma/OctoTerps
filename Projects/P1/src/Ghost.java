@@ -22,12 +22,8 @@ public class Ghost{
 		valid_moves = get_valid_moves();
 
 		Random r = new Random();
-		try {
-			this.myLoc = valid_moves.get(r.nextInt(valid_moves.size()));
-		} catch (Exception e) {
-			return false;
-		}
-		
+		this.myLoc = valid_moves.get(r.nextInt(valid_moves.size() - 1));
+				
 		return true;
 	}
 
