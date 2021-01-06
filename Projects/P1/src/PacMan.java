@@ -24,8 +24,12 @@ public class PacMan{
 		valid_moves = get_valid_moves();
 
 		Random r = new Random();
-		this.myLoc = valid_moves.get(r.nextInt(valid_moves.size()));
-
+		try {
+			this.myLoc = valid_moves.get(r.nextInt(valid_moves.size()));
+		} catch (Exception e) {
+			return false;
+		}
+		
 		return true;
 
 	}
