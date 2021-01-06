@@ -24,14 +24,9 @@ public class PacMan{
 		valid_moves = get_valid_moves();
 
 		Random r = new Random();
-		try {
-			this.myLoc = valid_moves.get(r.nextInt(valid_moves.size()));
-		} catch (Exception e) {
-			return false;
-		}
-		
-		return true;
+		this.myLoc = valid_moves.get(r.nextInt(valid_moves.size() - 1));
 
+		return true;
 	}
 
 	public boolean is_ghost_in_range() { 
