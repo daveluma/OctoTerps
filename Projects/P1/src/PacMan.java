@@ -23,6 +23,27 @@ public class PacMan{
 	}
 
 	public boolean is_ghost_in_range() { 
+		int x = this.myLoc.x;
+		int y = this.myLoc.y;
+
+		Location right = new Location(x + 1, y);
+		Location left = new Location(x - 1, y);
+		Location up = new Location(x, y - 1);
+		Location down = new Location(x, y + 1);
+		
+		if (myMap.getLoc(right).toString().equals("[GHOST]")) {
+			return true;
+		}
+		if (myMap.getLoc(left).toString().equals("[GHOST]")) {
+			return true;
+		}
+		if (myMap.getLoc(up).toString().equals("[GHOST]")) {
+			return true;
+		}
+		if (myMap.getLoc(down).toString().equals("[GHOST]")) {
+			return true;
+		}
+
 		return false;
 	}
 
