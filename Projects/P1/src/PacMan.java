@@ -31,16 +31,16 @@ public class PacMan{
 		Location up = new Location(x, y - 1);
 		Location down = new Location(x, y + 1);
 		
-		if (myMap.getLoc(right).toString().equals("[GHOST]")) {
+		if (myMap.getLoc(right).toString().contains("GHOST")) {
 			return true;
 		}
-		if (myMap.getLoc(left).toString().equals("[GHOST]")) {
+		if (myMap.getLoc(left).toString().contains("GHOST")) {
 			return true;
 		}
-		if (myMap.getLoc(up).toString().equals("[GHOST]")) {
+		if (myMap.getLoc(up).toString().contains("GHOST")) {
 			return true;
 		}
-		if (myMap.getLoc(down).toString().equals("[GHOST]")) {
+		if (myMap.getLoc(down).toString().contains("GHOST")) {
 			return true;
 		}
 
