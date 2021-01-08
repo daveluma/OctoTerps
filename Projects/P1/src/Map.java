@@ -76,7 +76,7 @@ public class Map{
 			return null;
 		}
 		JComponent comp = this.components.remove(name);
-		this.field.put(loc, emptySet);
+		this.field.get(loc).remove(Type.COOKIE);
 		this.cookies++;
 
 		return comp;
