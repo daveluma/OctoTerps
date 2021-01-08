@@ -16,17 +16,33 @@ public class PacMan{
 	}
 
 	public ArrayList<Location> get_valid_moves() {
-		return null;	
+		int x = this.myLoc.x;
+		int y = this.myLoc.y;
+		ArrayList<Location> arr = new ArrayList<Location>();
+		//set locations in all 4 directions
+		Location right = new Location(x + 1, y);
+		Location left = new Location(x - 1, y);
+		Location up = new Location(x, y - 1);
+		Location down = new Location(x, y + 1);
+
+		// .toString().compareTo("[WALL]") != 0
+		if (myMap.getLoc(right).contains(Map.Type.WALL))
+			arr.add(right);
+
+		if (myMap.getLoc(left).contains(Map.Type.WALL))
+			arr.add(left);
+
+		if (myMap.getLoc(up).contains(Map.Type.WALL))
+			arr.add(up);
+
+		if (myMap.getLoc(down).contains(Map.Type.WALL))
+			arr.add(down);
+
+		return arr;		
 	}
 
 	public boolean move() {
-		ArrayList<Location> valid_moves = new ArrayList<Location>();
-		valid_moves = get_valid_moves();
-
-		Random r = new Random();
-		this.myLoc = valid_moves.get(r.nextInt(valid_moves.size() - 1));
-
-		return true;
+		return false;
 	}
 
 	public boolean is_ghost_in_range() { 
