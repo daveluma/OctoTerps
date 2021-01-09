@@ -55,7 +55,15 @@ public class Map{
 	public boolean move(String name, Location loc, Type type) {
 		//update locations, components, and field
 		//use the setLocation method for the component to move it to the new location
-		return false;
+
+		Location prev_loc = locations.replace(name, loc);
+		JComponent comp = components.get(name);
+
+
+		if (prev_loc == null || comp == null) return false;
+		
+		comp.setLocation(loc.x, loc.y);
+		return true;
 	}
 	
 	public HashSet<Type> getLoc(Location loc) {
