@@ -1,36 +1,27 @@
 import junit.framework.*;
 import java.awt.Color;
 import java.io.*;
+import java.util.ArrayList;
 
 public class TestGhostValidMoves extends TestCase {
 
-	public void testGhostValidMoves() throws FileNotFoundException{
-		boolean torf = true;
+	public void testGhostValidMoves() throws FileNotFoundException {
 		NoFrame frame = new NoFrame(); // Creates A New Map With Walls and Tokens w/o a Display
-		Ghost ghost = frame.addGhost(new Location(2, 2), "billy", Color.red); // Creates a red ghost named "name" at
-		frame.initPlayers();
+		Ghost ghost = frame.addGhost(new Location(2, 2), "name", Color.red); //Creates a red ghost named "name" at location x,y
+		PacMan pacMan = frame.addPacMan(new Location(1, 1));
 		frame.startGame();
 
 		// Location loc = new Location(2, 2);
 		ArrayList<Location> arr = new ArrayList<Location>();
-		arr.add(new Location(3,2));
-		arr.add(new Location(2,3));
+		arr.add(new Location(2,1));
+		arr.add(new Location(1,2));
 
-		ArrayList<Location> movesGhost = ghost.get_valid_moves();
+		//returns null arraylist for some reason
+		ArrayList<Location> ghostArr = ghost.get_valid_moves();
+		// ghostArr.add(new Location(2,1));
+		// ghostArr.add(new Location(1,2));
 
-		if (movesGhost.size() != arr.size()) {
-			torf = false;
-		} else {
-			for (int i = 0; i < arr.size(); i++) {
-				Location l = movesGhost.get(i);
-				if (!arr.contains(l)) {
-					torf = false;
-					break;
-				}
-				l = null;
-			}
-		}
-
-		assertTrue(torf);
+		// System.out.println(pacMan.get_valid_moves());
+		assertTrue(arr.equals(ghostArr));
 	}
 }
