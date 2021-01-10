@@ -22,6 +22,6 @@ public class TestPacManValidMoves extends TestCase {
 		// movespac.add(new Location(1,2));
 
 		// System.out.println(pacMan.get_valid_moves());
-		assertTrue(arr.equals(movespac));
+		assertEquals(arr, movespac);
 	}
 }
