@@ -22,6 +22,6 @@ public class TestGhostValidMoves extends TestCase {
 		// ghostArr.add(new Location(1,2));
 
 		// System.out.println(pacMan.get_valid_moves());
-		assertTrue(arr.equals(ghostArr));
+		assertEquals(arr, ghostArr);
 	}
 }
