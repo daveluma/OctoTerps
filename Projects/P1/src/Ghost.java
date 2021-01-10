@@ -24,16 +24,16 @@ public class Ghost{
 		Location down = new Location(x, y + 1);
 
 		// .toString().compareTo("[WALL]") != 0
-		if (myMap.getLoc(right).contains(Map.Type.WALL))
+		if (!myMap.getLoc(right).contains(Map.Type.WALL))
 			arr.add(right);
 
-		if (myMap.getLoc(left).contains(Map.Type.WALL))
+		if (!myMap.getLoc(left).contains(Map.Type.WALL))
 			arr.add(left);
 
-		if (myMap.getLoc(up).contains(Map.Type.WALL))
+		if (!myMap.getLoc(up).contains(Map.Type.WALL))
 			arr.add(up);
 
-		if (myMap.getLoc(down).contains(Map.Type.WALL))
+		if (!myMap.getLoc(down).contains(Map.Type.WALL))
 			arr.add(down);
 
 		return arr;
