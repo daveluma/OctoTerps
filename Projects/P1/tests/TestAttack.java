@@ -5,6 +5,11 @@ import java.io.*;
 public class TestAttack extends TestCase {
 
 	public void testAttack() throws FileNotFoundException{
-		return null;	
+		NoFrame frame = new NoFrame();
+
+		Ghost ghost = frame.addGhost(new Location(1, 1), "Testy", Color.WHITE);
+		assertTrue(!ghost.attack());
+		PacMan pacMan = frame.addPacMan(new Location(0, 1));
+		assertTrue(ghost.attack());
 	}
 }
