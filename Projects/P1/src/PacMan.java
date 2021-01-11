@@ -18,6 +18,8 @@ public class PacMan{
 	public ArrayList<Location> get_valid_moves() {
 		int x = this.myLoc.x;
 		int y = this.myLoc.y;
+		// x=1, y=1
+
 		ArrayList<Location> arr = new ArrayList<Location>();
 		//set locations in all 4 directions
 		Location right = new Location(x + 1, y);
@@ -26,19 +28,19 @@ public class PacMan{
 		Location down = new Location(x, y + 1);
 
 		// .toString().compareTo("[WALL]") != 0
-		if (!myMap.getLoc(right).contains(Map.Type.WALL))
+		if (myMap.getLoc(right) != null && !myMap.getLoc(right).contains(Map.Type.WALL))
 			arr.add(right);
 
-		if (!myMap.getLoc(left).contains(Map.Type.WALL))
+		if (myMap.getLoc(left) != null && !myMap.getLoc(left).contains(Map.Type.WALL))
 			arr.add(left);
 
-		if (!myMap.getLoc(up).contains(Map.Type.WALL))
+		if (myMap.getLoc(up) != null && !myMap.getLoc(up).contains(Map.Type.WALL))
 			arr.add(up);
 
-		if (!myMap.getLoc(down).contains(Map.Type.WALL))
+		if (myMap.getLoc(down) != null && !myMap.getLoc(down).contains(Map.Type.WALL))
 			arr.add(down);
 
-		return arr;		
+		return arr;			
 	}
 
 	public boolean move() {
@@ -46,7 +48,7 @@ public class PacMan{
 		valid_moves = get_valid_moves();
 
 		Random r = new Random();
-		this.myLoc = valid_moves.get(r.nextInt(valid_moves.size() - 1));
+		this.myLoc = valid_moves.get(r.nextInt(valid_moves.size()));
 
 		return true;
 	}
@@ -60,16 +62,16 @@ public class PacMan{
 		Location up = new Location(x, y - 1);
 		Location down = new Location(x, y + 1);
 		
-		if (myMap.getLoc(right).toString().contains("GHOST")) {
+		if (myMap.getLoc(right) != null && myMap.getLoc(right).toString().contains("GHOST")) {
 			return true;
 		}
-		if (myMap.getLoc(left).toString().contains("GHOST")) {
+		if (myMap.getLoc(left) != null && myMap.getLoc(left).toString().contains("GHOST")) {
 			return true;
 		}
-		if (myMap.getLoc(up).toString().contains("GHOST")) {
+		if (myMap.getLoc(up) != null && myMap.getLoc(up).toString().contains("GHOST")) {
 			return true;
 		}
-		if (myMap.getLoc(down).toString().contains("GHOST")) {
+		if (myMap.getLoc(down) != null && myMap.getLoc(down).toString().contains("GHOST")) {
 			return true;
 		}
 
