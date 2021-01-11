@@ -29,7 +29,7 @@
 
 ## Usage
 
-Enter the following in the terminal while in the `p1` directory
+Enter the following in the terminal while in the `Projects/P1` directory
 
 ```bash
 javac -cp "src/" src/*.java
