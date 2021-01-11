@@ -54,7 +54,7 @@ Created a new map and positioned a new PacMan instance at position (1,0). I then
 ### is_ghost_in_range
 
 Implementation:
-This function checks if any ghost is in attack range of PacMan. A ghost can attack PacMan if it is within 1 block of PacMan. Uses [`Map.getLoc()'](#getloc) to see check the 1 block radius surrounding PacMan. The method returns true when a ghost is within 1 block of PacMan and returns false otherwise.
+This function checks if any ghost is in attack range of PacMan. A ghost can attack PacMan if it is within 1 block of PacMan. Uses [`Map.getLoc()`](#getloc) to see check the 1 block radius surrounding PacMan. The method returns true when a ghost is within 1 block of PacMan and returns false otherwise.
 
 Test:
 To test this method, a `NoFrame` is created with a PacMan at (1, 0) and a ghost at (3, 0) `pacMan.is_ghost_in_range()` and is asserted to be `false`. Another ghost is added at (2, 0) and `pacMan.is_ghost_in_range()` is asserted to be true. 
@@ -88,7 +88,7 @@ Created a new map and positioned a new Ghost instance at position (1,0). I then 
 ### is_pacman_in_range
 
 Implementation:
-This function checks if PacMan is in attack range of a ghost. A ghost can attack PacMan if it is within 1 block of PacMan. Uses [`Map.getLoc()'](#getloc) to see check the 1 block radius surrounding the ghost. The method returns true when a ghost is within 1 block of PacMan and returns false otherwise.
+This function checks if PacMan is in attack range of a ghost. A ghost can attack PacMan if it is within 1 block of PacMan. Uses [`Map.getLoc()`](#getloc) to see check the 1 block radius surrounding the ghost. The method returns true when a ghost is within 1 block of PacMan and returns false otherwise.
 
 Test:
 To test this method, a `NoFrame` is created with a PacMan at (1, 0) and a ghost at (3, 0) `pacMan.is_ghost_in_range()` and is asserted to be `false`. Another ghost is added at (2, 0) and `pacMan.is_ghost_in_range()` is asserted to be true.
