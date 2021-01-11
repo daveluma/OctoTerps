@@ -25,6 +25,8 @@ TODO GIF of PacMan game running
 
 ## Usage
 
+Enter the following in the terminal while in the `p1` directory
+
 ```bash
 javac -cp "src/" src/*.java
 java -cp "src/" StartMenu
