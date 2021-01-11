@@ -8,6 +8,7 @@ public class TestGhostMove extends TestCase {
 		NoFrame frame = new NoFrame();
 
 		Ghost ghost = frame.addGhost(new Location(1,0), "Boban", Color.DARK_GRAY);
-		assertTrue(ghost.move());
+		for (int i=0; i<4; i++)
+			assertTrue(ghost.move());
 	}
 }
