@@ -63,6 +63,9 @@ public class Map{
 		if (prev_loc == null || comp == null) return false;
 		
 		comp.setLocation(loc.x, loc.y);
+		components.replace(name, comp);
+		field.get(loc).add(type);
+		
 		return true;
 	}
 	
