@@ -55,22 +55,38 @@ public class Map{
 	public boolean move(String name, Location loc, Type type) {
 		//update locations, components, and field
 		//use the setLocation method for the component to move it to the new location
-		return false;
+
+		Location prev_loc = locations.replace(name, loc);
+		JComponent comp = components.get(name);
+
+
+		if (prev_loc == null || comp == null) return false;
+		
+		comp.setLocation(loc.x, loc.y);
+		return true;
 	}
 	
 	public HashSet<Type> getLoc(Location loc) {
 		//wallSet and emptySet will help you write this method
-		return null;
+		return (this.field.get(loc) == null) ? null : this.field.get(loc);		
 	}
 
 	public boolean attack(String Name) {
-		//update gameOver
-		return false;
+		gameOver = true;
+		return gameOver;
 	}
 	
 	public JComponent eatCookie(String name) {
 		//update locations, components, field, and cookies
 		//the id for a cookie at (10, 1) is tok_x10_y1
-		return null;
+		Location loc = this.locations.remove(name);
+		if (loc == null) {
+			return null;
+		}
+		JComponent comp = this.components.remove(name);
+		this.field.get(loc).remove(Type.COOKIE);
+		this.cookies++;
+
+		return comp;
 	}
 }
