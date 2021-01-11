@@ -9,7 +9,7 @@ public class TestAttack extends TestCase {
 
 		Ghost ghost = frame.addGhost(new Location(1, 1), "Testy", Color.WHITE);
 		assertTrue(!ghost.attack());
-		PacMan pacMan = frame.addPacMan(new Location(0, 1));
+		frame.addPacMan(new Location(0, 1));
 		assertTrue(ghost.attack());
 	}
 }
