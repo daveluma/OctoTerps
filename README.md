@@ -2,7 +2,11 @@
 
 <p align="center">John Blanco, Daniel Rowe, Will Spencer, Gilbert Garczynski<p>
 
+<div align="center">
+
 ![PacMan GIF](pacman.gif)
+
+</div>
 
 ## Table of Contents <!-- omit in toc -->
 
@@ -36,12 +40,11 @@ java -cp "src/" StartMenu
 
 ### get_valid_moves
 
-Implementation: 
-This function returns the valid moves for the PacMan object at any current position on the board.  It checks each direction and if the direction is not a wall, it adds this direction to an Array List. 
+Implementation:
+This function returns the valid moves for the PacMan object at any current position on the board.  It checks each direction and if the direction is not a wall, it adds this direction to an Array List.
 
 Test:
 Created a new map and positioned a PacMan at the coordinates (1,1).  The right and down directions are valid moves, so these two are checked for in the array that is returned from pacman.get_valid_moves().  The valid moves are: (2,1) and (1,2).
-
 
 ### move
 
@@ -57,7 +60,7 @@ Implementation:
 This function checks if any ghost is in attack range of PacMan. A ghost can attack PacMan if it is within 1 block of PacMan. Uses [`Map.getLoc()`](#getloc) to see check the 1 block radius surrounding PacMan. The method returns true when a ghost is within 1 block of PacMan and returns false otherwise.
 
 Test:
-To test this method, a `NoFrame` is created with a PacMan at (1, 0) and a ghost at (3, 0) `pacMan.is_ghost_in_range()` and is asserted to be `false`. Another ghost is added at (2, 0) and `pacMan.is_ghost_in_range()` is asserted to be true. 
+To test this method, a `NoFrame` is created with a PacMan at (1, 0) and a ghost at (3, 0) `pacMan.is_ghost_in_range()` and is asserted to be `false`. Another ghost is added at (2, 0) and `pacMan.is_ghost_in_range()` is asserted to be true.
 
 ### consume
 
@@ -71,11 +74,10 @@ To test this method, a `NoFrame` is created with a PacMan at a location that doe
 ### get_valid_moves
 
 Implementation:
-This function returns the valid moves for the Ghost object at any current position on the board.  It checks each direction and if the direction is not a wall, it adds this direction to an Array List. 
+This function returns the valid moves for the Ghost object at any current position on the board.  It checks each direction and if the direction is not a wall, it adds this direction to an Array List.
 
 Test:
 Created a new map and positioned a Ghost at the coordinates (1,1).  The right and down directions are valid moves, so these two are checked for in the array that is returned from ghost.get_valid_moves().  The valid moves are: (2,1) and (1,2).
-
 
 ### move
 
@@ -97,7 +99,7 @@ To test this method, a `NoFrame` is created with a PacMan at (1, 0) and a ghost 
 
 Checks if pacman is in range with [`Ghost.is_pacman_in_range`](#is_pacman_in_range) then returns the result of [`Map.attack(myName)`](#attack-1). Otherwise returns false.
 
-Test: 
+Test:
 To test this method, a `NoFrame` is created with a Ghost at a location that is not near a PacMan. `ghost.attack()` is called and asserted to be `false`. Then a PacMan is added one space away from the ghost and `ghost.attack()` is called again and asserted to be `true`.
 
 ## Map
@@ -118,14 +120,13 @@ Returns what is currently at the location.  Map.Type.WALL, Map.Type.PACMAN, Map.
 Test:
 To test each possible location type, I created a map and loaded each object into it in specific coordinates.  
 
-
 ### attack
 
 Implementation:
-This method controls the game state. When called, it changes the `gameOver` variable to `true`, signifying that the game has ended. The method is called from [`Ghost.attack()`](#attack) 
+This method controls the game state. When called, it changes the `gameOver` variable to `true`, signifying that the game has ended. The method is called from [`Ghost.attack()`](#attack)
 
 Test:
-Created a `NoFrame` with PacMan located at (5, 5) and a ghost located at (4, 5). Got the game state using `Map.isGameOver()` and asserted `gameOver` to be `false`. Then, called ['Ghost.attack()`](#attack), got the game state using `Map.isGameOver()` and asserted `gameOver` to be `true` 
+Created a `NoFrame` with PacMan located at (5, 5) and a ghost located at (4, 5). Got the game state using `Map.isGameOver()` and asserted `gameOver` to be `false`. Then, called ['Ghost.attack()`](#attack), got the game state using`Map.isGameOver()` and asserted `gameOver` to be `true`
 
 ### eatCookie
 
