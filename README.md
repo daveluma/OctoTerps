@@ -1,4 +1,4 @@
-# PacMan <!-- omit in toc -->
+<h1 align="center">CMSC388T PacMan</h1>
 
 <p align="center">John Blanco, Daniel Rowe, Will Spencer, Gilbert Garczynski<p>
 
