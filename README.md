@@ -119,6 +119,7 @@ TODO test
 
 ### eatCookie
 
-TODO Implementation
+First attempts to remove the location by the given name in the format `tok_x<num>_y<num>`. If this is successful, the `CookieComponent` is removed from the list of componenets. Then, the cookie is removed from the field and the cookie score is incremented. The `CookieComponent` that was consumed is returned.
 
-TODO test
+Test:
+To test this method, a `NoFrame` is created without PacMan and ghosts. The map created by the `NoFrame` is extracted and used for the tests. First, `eatCookie` is called on an invalid location and asserted that eatCookie returns null and also does not increment the cookies. This ensures that the method returns at the if statement. Then `eatCookie` is called with a valid cookie location and asserted to return a `CookieComponent`. Also, the location is verified to no longer contain a cookie and that the cookie score has been incremented properly.
