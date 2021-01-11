@@ -62,16 +62,16 @@ public class PacMan{
 		Location up = new Location(x, y - 1);
 		Location down = new Location(x, y + 1);
 		
-		if (myMap.getLoc(right).toString().contains("GHOST")) {
+		if (myMap.getLoc(right) != null && myMap.getLoc(right).toString().contains("GHOST")) {
 			return true;
 		}
-		if (myMap.getLoc(left).toString().contains("GHOST")) {
+		if (myMap.getLoc(left) != null && myMap.getLoc(left).toString().contains("GHOST")) {
 			return true;
 		}
-		if (myMap.getLoc(up).toString().contains("GHOST")) {
+		if (myMap.getLoc(up) != null && myMap.getLoc(up).toString().contains("GHOST")) {
 			return true;
 		}
-		if (myMap.getLoc(down).toString().contains("GHOST")) {
+		if (myMap.getLoc(down) != null && myMap.getLoc(down).toString().contains("GHOST")) {
 			return true;
 		}
 
