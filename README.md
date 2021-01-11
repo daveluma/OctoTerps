@@ -2,7 +2,7 @@
 
 <p align="center">John Blanco, Daniel Rowe, Will Spencer, Gilbert Garczynski<p>
 
-TODO GIF of PacMan game running
+![PacMan GIF](pacman.gif)
 
 ## Table of Contents <!-- omit in toc -->
 
