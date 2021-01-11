@@ -54,10 +54,10 @@ Created a new map and positioned a new PacMan instance at position (1,0). I then
 ### is_ghost_in_range
 
 Implementation:
-This function checks if any ghost is in attack range of PacMan. A ghost can attack PacMan if it is within 1 block of PacMan. The function returns true when a ghost is within 1 block of PacMan and returns false otherwise.
+This function checks if any ghost is in attack range of PacMan. A ghost can attack PacMan if it is within 1 block of PacMan. Uses [`Map.getLoc()'](#getloc) to see check the 1 block radius surrounding PacMan. The method returns true when a ghost is within 1 block of PacMan and returns false otherwise.
 
 Test:
-Created a new map and position PacMan at (1, 1). Added a ghost at (3, 3) and a ghost at (1, 2). The function returned false for the ghost at (3, 3) and true for the ghost at (1, 2). 
+To test this method, a `NoFrame` is created with a PacMan at (1, 0) and a ghost at (3, 0) `pacMan.is_ghost_in_range()` and is asserted to be `false`. Another ghost is added at (2, 0) and `pacMan.is_ghost_in_range()` is asserted to be true. 
 
 ### consume
 
@@ -87,15 +87,18 @@ Created a new map and positioned a new Ghost instance at position (1,0). I then 
 
 ### is_pacman_in_range
 
-TODO Implementation
+Implementation:
+This function checks if PacMan is in attack range of a ghost. A ghost can attack PacMan if it is within 1 block of PacMan. Uses [`Map.getLoc()'](#getloc) to see check the 1 block radius surrounding the ghost. The method returns true when a ghost is within 1 block of PacMan and returns false otherwise.
 
-TODO test
+Test:
+To test this method, a `NoFrame` is created with a PacMan at (1, 0) and a ghost at (3, 0) `pacMan.is_ghost_in_range()` and is asserted to be `false`. Another ghost is added at (2, 0) and `pacMan.is_ghost_in_range()` is asserted to be true.
 
 ### attack
 
-TODO Implementation
+Checks if pacman is in range with [`Ghost.is_pacman_in_range`](#is_pacman_in_range) then returns the result of [`Map.attack(myName)`](#attack-1). Otherwise returns false.
 
-TODO test
+Test: 
+To test this method, a `NoFrame` is created with a Ghost at a location that is not near a PacMan. `ghost.attack()` is called and asserted to be `false`. Then a PacMan is added one space away from the ghost and `ghost.attack()` is called again and asserted to be `true`.
 
 ## Map
 
@@ -118,12 +121,15 @@ To test each possible location type, I created a map and loaded each object into
 
 ### attack
 
-TODO Implementation
+Implementation:
+This method controls the game state. When called, it changes the `gameOver` variable to `true`, signifying that the game has ended. The method is called from [`Ghost.attack()`](#attack) 
 
-TODO test
+Test:
+Created a `NoFrame` with PacMan located at (5, 5) and a ghost located at (4, 5). Got the game state using `Map.isGameOver()` and asserted `gameOver` to be `false`. Then, called ['Ghost.attack()`](#attack), got the game state using `Map.isGameOver()` and asserted `gameOver` to be `true` 
 
 ### eatCookie
 
-TODO Implementation
+First attempts to remove the location by the given name in the format `tok_x<num>_y<num>`. If this is successful, the `CookieComponent` is removed from the list of componenets. Then, the cookie is removed from the field and the cookie score is incremented. The `CookieComponent` that was consumed is returned.
 
-TODO test
+Test:
+To test this method, a `NoFrame` is created without PacMan and ghosts. The map created by the `NoFrame` is extracted and used for the tests. First, `eatCookie` is called on an invalid location and asserted that eatCookie returns null and also does not increment the cookies. This ensures that the method returns at the if statement. Then `eatCookie` is called with a valid cookie location and asserted to return a `CookieComponent`. Also, the location is verified to no longer contain a cookie and that the cookie score has been incremented properly.
