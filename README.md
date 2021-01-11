@@ -1,10 +1,109 @@
-# cmsc388t_winter21
-CMSC388T Winter 21
+# PacMan <!-- omit in toc -->
 
-John Blanco
+<p align="center">John Blanco, Daniel Rowe, Will Spencer, Gilbert Garczynski<p>
 
-Daniel Rowe
+TODO GIF of PacMan game running
 
-Will Spencer
+## Table of Contents <!-- omit in toc -->
 
-Gilbert Garczynski
+- [Usage](#usage)
+- [PacMan](#pacman)
+  - [get_valid_moves](#get_valid_moves)
+  - [move](#move)
+  - [is_ghost_in_range](#is_ghost_in_range)
+  - [consume](#consume)
+- [Ghost](#ghost)
+  - [get_valid_moves](#get_valid_moves-1)
+  - [move](#move-1)
+  - [is_pacman_in_range](#is_pacman_in_range)
+  - [attack](#attack)
+- [Map](#map)
+  - [move](#move-2)
+  - [getLoc](#getloc)
+  - [attack](#attack-1)
+  - [eatCookie](#eatcookie)
+
+## Usage
+
+```bash
+javac -cp "src/" src/*.java
+java -cp "src/" StartMenu
+```
+
+## PacMan
+
+### get_valid_moves
+
+TODO Implementation
+
+TODO test
+
+### move
+
+TODO Implementation
+
+TODO test
+
+### is_ghost_in_range
+
+TODO Implementation
+
+TODO test
+
+### consume
+
+TODO Implementation
+
+TODO test
+
+## Ghost
+
+### get_valid_moves
+
+TODO Implementation
+
+TODO test
+
+### move
+
+TODO Implementation
+
+TODO test
+
+### is_pacman_in_range
+
+TODO Implementation
+
+TODO test
+
+### attack
+
+TODO Implementation
+
+TODO test
+
+## Map
+
+### move
+
+TODO Implementation
+
+TODO test
+
+### getLoc
+
+TODO Implementation
+
+TODO test
+
+### attack
+
+TODO Implementation
+
+TODO test
+
+### eatCookie
+
+TODO Implementation
+
+TODO test
