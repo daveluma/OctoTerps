@@ -36,10 +36,10 @@ java -cp "src/" StartMenu
 
 ### get_valid_moves
 
-Implementation
+Implementation: 
 This function returns the valid moves for the PacMan object at any current position on the board.  It checks each direction and if the direction is not a wall, it adds this direction to an Array List. 
 
-Test
+Test:
 Created a new map and positioned a PacMan at the coordinates (1,1).  The right and down directions are valid moves, so these two are checked for in the array that is returned from pacman.get_valid_moves().  The valid moves are: (2,1) and (1,2).
 
 
@@ -65,10 +65,10 @@ TODO test
 
 ### get_valid_moves
 
-Implementation
+Implementation:
 This function returns the valid moves for the Ghost object at any current position on the board.  It checks each direction and if the direction is not a wall, it adds this direction to an Array List. 
-Test
 
+Test:
 Created a new map and positioned a Ghost at the coordinates (1,1).  The right and down directions are valid moves, so these two are checked for in the array that is returned from ghost.get_valid_moves().  The valid moves are: (2,1) and (1,2).
 
 
@@ -100,10 +100,10 @@ TODO test
 
 ### getLoc
 
-Implementation
+Implementation:
 Returns what is currently at the location.  Map.Type.WALL, Map.Type.PACMAN, Map.Type.GHOST, Map.Type.COOKIE, Map.Type.EMPTY
 
-Test
+Test:
 To test each possible location type, I created a map and loaded each object into it in specific coordinates.  
 
 
