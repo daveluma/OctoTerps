@@ -51,9 +51,11 @@ TODO test
 
 ### is_ghost_in_range
 
-TODO Implementation
+Implementation:
+This function checks if any ghost is in attack range of PacMan. A ghost can attack PacMan if it is within 1 block of PacMan. The function returns true when a ghost is within 1 block of PacMan and returns false otherwise.
 
-TODO test
+Test:
+Created a new map and position PacMan at (1, 1). Added a ghost at (3, 3) and a ghost at (1, 2). The function returned false for the ghost at (3, 3) and true for the ghost at (1, 2). 
 
 ### consume
 
