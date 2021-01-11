@@ -59,9 +59,10 @@ Created a new map and position PacMan at (1, 1). Added a ghost at (3, 3) and a g
 
 ### consume
 
-TODO Implementation
+Uses [`Map.getLoc()`](#getloc) to see if the current location contains a *power-cookie*. If it does, it calls [`Map.eatCookie()`](#eatcookie) and returns the `CookieComponent` that was eaten. Otherwise, it returns `null`.
 
-TODO test
+Test:
+To test this method, a `NoFrame` is created with a PacMan at a location that does not contain a cookie. `pacMan.consume()` is called and asserted to be `null`. Then a PacMan is added at a location with a cookie and `pacMan.consume()` is called again and asserted to not be `null`.
 
 ## Ghost
 
