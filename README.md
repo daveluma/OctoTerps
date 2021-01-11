@@ -89,9 +89,10 @@ TODO test
 
 ### attack
 
-TODO Implementation
+Checks if pacman is in range with [`Ghost.is_pacman_in_range`](#is_pacman_in_range) then returns the result of [`Map.attack(myName)`](#attack-1).
 
-TODO test
+Test: 
+To test this method, a `NoFrame` is created with a Ghost at a location that is not near a PacMan. `ghost.attack()` is called and asserted to be `false`. Then a PacMan is added one space away from the ghost and `ghost.attack()` is called again and asserted to be `true`.
 
 ## Map
 
