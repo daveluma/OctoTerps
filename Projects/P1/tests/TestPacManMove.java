@@ -5,6 +5,9 @@ import java.io.*;
 public class TestPacManMove extends TestCase {
 
 	public void testPacManMove() throws FileNotFoundException{
-		return null;
+		NoFrame frame = new NoFrame();
+
+		PacMan pacman = frame.addPacMan(new Location(1,0));
+		assertTrue(pacman.move());
 	}
 }
