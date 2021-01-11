@@ -45,9 +45,11 @@ Created a new map and positioned a PacMan at the coordinates (1,1).  The right a
 
 ### move
 
-TODO Implementation
+Implementation:
+This function takes a random Location that's being passed in using PacMan.get_valid_moves() and since that's returned in get_valid_moves() are all valid, this function only returns true.
 
-TODO test
+Test:
+Created a new map and positioned a new PacMan instance at position (1,0). I then created a for loop that contained an assertTrue() to make sure that PacMan.move() returns True for the a consecutive amount of times, in which the group decided would be four times.
 
 ### is_ghost_in_range
 
@@ -77,9 +79,11 @@ Created a new map and positioned a Ghost at the coordinates (1,1).  The right an
 
 ### move
 
-TODO Implementation
+Implementation:
+This function takes a random Location that's being passed in using Ghost.get_valid_moves() and since that's returned in get_valid_moves() are all valid, this function only returns true.
 
-TODO test
+Test:
+Created a new map and positioned a new Ghost instance at position (1,0). I then created a for loop that contained an assertTrue() to make sure that Ghost.move() returns True for the a consecutive amount of times, in which the group decided would be four times.
 
 ### is_pacman_in_range
 
@@ -97,9 +101,11 @@ TODO test
 
 ### move
 
-TODO Implementation
+Implementation:
+This function updates the locations HashMap by using locations.replace(name, loc). I store the returned location as prev_loc for a null check later on. I then get the JComponent for the object being passed into Map.move() which is either PacMan or a Ghost, and store it into comp. If either prev_loc or comp is null then Map.move() returns False. Otherwise, it sets the location using setLocation() and adds comp back into the components HashMap.
 
-TODO test
+Test:
+Created a new map and positioned a new Ghost and PacMan instance. I then used AssertTrue to ensure that Map.move() would return true for both the PacMan and Ghost that I created.
 
 ### getLoc
 
