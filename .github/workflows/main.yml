@@ -35,6 +35,6 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: compile with tests
-        run: javac -cp "tests/junit-4.10.jar:src/:tests/" tests/TestMapEatCookie.java
+        run: cd Projects/P1 && javac -cp "tests/junit-4.10.jar:src/:tests/" tests/TestMapEatCookie.java
       - name: run test
         run: java -cp "tests/junit-4.10.jar:src/:tests/" org.junit.runner.JUnitCore TestMapEatCookie
