@@ -37,4 +37,4 @@ jobs:
       - name: compile with tests
         run: cd Projects/P1 && javac -cp "tests/junit-4.10.jar:src/:tests/" tests/TestMapEatCookie.java
       - name: run test
-        run: java -cp "tests/junit-4.10.jar:src/:tests/" org.junit.runner.JUnitCore TestMapEatCookie
+        run: cd Projects/P1 && java -cp "tests/junit-4.10.jar:src/:tests/" org.junit.runner.JUnitCore TestMapEatCookie
