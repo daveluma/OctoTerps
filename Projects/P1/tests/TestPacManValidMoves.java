@@ -10,7 +10,7 @@ public class TestPacManValidMoves extends TestCase {
 		PacMan pacMan = frame.addPacMan(new Location(1, 1));
 		ArrayList<Location> arr = new ArrayList<Location>();
 		arr.add(new Location(2, 1));
-
+		arr.add(new Location(1, 2));
 		ArrayList<Location> movespac = pacMan.get_valid_moves();
 		assertEquals(arr, movespac);
 	}
