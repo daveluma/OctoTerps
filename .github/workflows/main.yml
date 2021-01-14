@@ -29,3 +29,12 @@ jobs:
       # Runs a single command using the runners shell
       - name: Compile
         run: javac -cp "src/" src/*.java
+  TestMapEatCookie:
+    runs-on: ubuntu-latest
+    container: openjdk
+    steps:
+      - uses: actions/checkout@v2
+      - name: compile with tests
+        run: javac -cp "tests/junit-4.10.jar:src/:tests/" tests/TestMapEatCookie.java
+      - name: run test
+        run: java -cp "tests/junit-4.10.jar:src/:tests/" org.junit.runner.JUnitCore TestMapEatCookie
