@@ -28,4 +28,4 @@ jobs:
 
       # Runs a single command using the runners shell
       - name: Compile
-        run: javac -cp "src/" src/*.java
+        run: cd Projects/P1 && javac -cp "src/" src/*.java
