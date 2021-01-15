@@ -29,3 +29,30 @@ jobs:
       # Runs a single command using the runners shell
       - name: Compile
         run: cd Projects/P1 && javac -cp "src/" src/*.java
+  TestPacManValidMoves:
+    runs-on: ubuntu-latest
+    container: openjdk
+    steps:
+      - uses: actions/checkout@v2
+      - name: compile with tests
+        run: cd Projects/P1 && javac -cp "tests/junit-4.10.jar:src/:tests/" tests/TestPacManValidMoves.java
+      - name: run test
+        run: cd Projects/P1 && java -cp "tests/junit-4.10.jar:src/:tests/" org.junit.runner.JUnitCore TestPacManValidMoves
+  TestGhostValidMoves:
+    runs-on: ubuntu-latest
+    container: openjdk
+    steps:
+      - uses: actions/checkout@v2
+      - name: compile with tests
+        run: cd Projects/P1 && javac -cp "tests/junit-4.10.jar:src/:tests/" tests/TestGhostValidMoves.java
+      - name: run test
+        run: cd Projects/P1 && java -cp "tests/junit-4.10.jar:src/:tests/" org.junit.runner.JUnitCore TestGhostValidMoves
+  TestMapGetLoc:
+    runs-on: ubuntu-latest
+    container: openjdk
+    steps:
+      - uses: actions/checkout@v2
+      - name: compile with tests
+        run: cd Projects/P1 && javac -cp "tests/junit-4.10.jar:src/:tests/" tests/TestMapGetLoc.java
+      - name: run test
+        run: cd Projects/P1 && java -cp "tests/junit-4.10.jar:src/:tests/" org.junit.runner.JUnitCore TestMapGetLoc
