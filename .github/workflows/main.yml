@@ -56,3 +56,30 @@ jobs:
         run: cd Projects/P1 && javac -cp "tests/junit-4.10.jar:src/:tests/" tests/TestMapGetLoc.java
       - name: run test
         run: cd Projects/P1 && java -cp "tests/junit-4.10.jar:src/:tests/" org.junit.runner.JUnitCore TestMapGetLoc
+  TestMapEatCookie:
+    runs-on: ubuntu-latest
+    container: openjdk
+    steps:
+      - uses: actions/checkout@v2
+      - name: compile with tests
+        run: cd Projects/P1 && javac -cp "tests/junit-4.10.jar:src/:tests/" tests/TestMapEatCookie.java
+      - name: run test
+        run: cd Projects/P1 && java -cp "tests/junit-4.10.jar:src/:tests/" org.junit.runner.JUnitCore TestMapEatCookie
+  TestConsume:
+    runs-on: ubuntu-latest
+    container: openjdk
+    steps:
+      - uses: actions/checkout@v2
+      - name: compile with tests
+        run: cd Projects/P1 && javac -cp "tests/junit-4.10.jar:src/:tests/" tests/TestConsume.java
+      - name: run test
+        run: cd Projects/P1 && java -cp "tests/junit-4.10.jar:src/:tests/" org.junit.runner.JUnitCore TestConsume
+  TestAttack:
+    runs-on: ubuntu-latest
+    container: openjdk
+    steps:
+      - uses: actions/checkout@v2
+      - name: compile with tests
+        run: cd Projects/P1 && javac -cp "tests/junit-4.10.jar:src/:tests/" tests/TestAttack.java
+      - name: run test
+        run: cd Projects/P1 && java -cp "tests/junit-4.10.jar:src/:tests/" org.junit.runner.JUnitCore TestAttack
