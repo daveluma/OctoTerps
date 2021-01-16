@@ -110,3 +110,31 @@ jobs:
         run: cd Projects/P1 && javac -cp "tests/junit-4.10.jar:src/:tests/" tests/TestMapAttack.java
       - name: run test
         run: cd Projects/P1 && java -cp "tests/junit-4.10.jar:src/:tests/" org.junit.runner.JUnitCore TestMapAttack
+  TestPacManMove:
+    runs-on: ubuntu-latest
+    container: openjdk
+    steps:
+      - uses: actions/checkout@v2
+      - name: compile with tests
+        run: cd Projects/P1 && javac -cp "tests/junit-4.10.jar:src/:tests/" tests/TestPacManMove.java
+      - name: run test
+        run: cd Projects/P1 && java -cp "tests/junit-4.10.jar:src/:tests/" org.junit.runner.JUnitCore TestPacManMove
+  TestGhostMove:
+    runs-on: ubuntu-latest
+    container: openjdk
+    steps:
+      - uses: actions/checkout@v2
+      - name: compile with tests
+        run: cd Projects/P1 && javac -cp "tests/junit-4.10.jar:src/:tests/" tests/TestGhostMove.java
+      - name: run test
+        run: cd Projects/P1 && java -cp "tests/junit-4.10.jar:src/:tests/" org.junit.runner.JUnitCore TestGhostMove
+  TestMapMove:
+    runs-on: ubuntu-latest
+    container: openjdk
+    steps:
+      - uses: actions/checkout@v2
+      - name: compile with tests
+        run: cd Projects/P1 && javac -cp "tests/junit-4.10.jar:src/:tests/" tests/TestMapMove.java
+      - name: run test
+        run: cd Projects/P1 && java -cp "tests/junit-4.10.jar:src/:tests/" org.junit.runner.JUnitCore TestMapMove
+  
