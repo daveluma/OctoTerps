@@ -64,6 +64,9 @@ public class Map{
 		
 		comp.setLocation(loc.x, loc.y);
 		components.replace(name, comp);
+
+		//need to update field like how they did in Map.add()
+		if (!field.containsKey(loc)) field.put(loc, new HashSet<Type>());
 		field.get(loc).add(type);
 		
 		return true;
