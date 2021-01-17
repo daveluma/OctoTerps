@@ -59,16 +59,16 @@ public class Ghost{
 		Location up = new Location(x, y - 1);
 		Location down = new Location(x, y + 1);
 		
-		if (myMap.getLoc(right) != null && myMap.getLoc(right).toString().contains("PACMAN")) {
+		if (myMap.getLoc(right).toString().contains("PACMAN")) {
 			return true;
 		}
-		if (myMap.getLoc(left) != null && myMap.getLoc(left).toString().contains("PACMAN")) {
+		if (myMap.getLoc(left).toString().contains("PACMAN")) {
 			return true;
 		}
-		if (myMap.getLoc(up) != null && myMap.getLoc(up).toString().contains("PACMAN")) {
+		if (myMap.getLoc(up).toString().contains("PACMAN")) {
 			return true;
 		}
-		if (myMap.getLoc(down) != null && myMap.getLoc(down).toString().contains("PACMAN")) {
+		if (myMap.getLoc(down).toString().contains("PACMAN")) {
 			return true;
 		}
 
