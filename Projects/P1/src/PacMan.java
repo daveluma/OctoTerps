@@ -62,7 +62,7 @@ public class PacMan{
 
 	public boolean move() {
 		ArrayList<Location> valid_moves = new ArrayList<Location>();
-
+		valid_moves = get_valid_moves();
 		Random r = new Random();
 		this.myLoc = valid_moves.get(r.nextInt(valid_moves.size()));
 		myMap.move(myName, myLoc, Map.Type.PACMAN);
