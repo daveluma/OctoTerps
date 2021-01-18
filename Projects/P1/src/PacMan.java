@@ -21,26 +21,42 @@ public class PacMan{
 		// x=1, y=1
 
 		ArrayList<Location> arr = new ArrayList<Location>();
-		//set locations in all 4 directions
+		// et locations in all 4 directions
 		Location right = new Location(x + 1, y);
 		Location left = new Location(x - 1, y);
 		Location up = new Location(x, y - 1);
 		Location down = new Location(x, y + 1);
+		Location upRight = new Location(x + 1, y - 1);
+		Location upLeft = new Location(x - 1, y - 1);
+		Location downRight = new Location(x + 1, y - 1);
+		Location downLeft = new Location(x + 1, y + 1);
 
 		// .toString().compareTo("[WALL]") != 0
-// 		if (myMap.getLoc(right) != null && !myMap.getLoc(right).contains(Map.Type.WALL))
+// 		if (myMap.getLoc(right) != null && !myMap.getLoc(right).contains(Map.Type.GHOST) && !myMap.getLoc(right).contains(Map.Type.WALL) && !arr.contains(right))
 // 			arr.add(right);
 
-		if (myMap.getLoc(left) != null && !myMap.getLoc(left).contains(Map.Type.WALL))
+		if (myMap.getLoc(left) != null && !myMap.getLoc(left).contains(Map.Type.GHOST) && !myMap.getLoc(left).contains(Map.Type.WALL) && !arr.contains(left))
 			arr.add(left);
 
-		if (myMap.getLoc(up) != null && !myMap.getLoc(up).contains(Map.Type.WALL))
+		if (myMap.getLoc(up) != null && !myMap.getLoc(up).contains(Map.Type.GHOST) && !myMap.getLoc(up).contains(Map.Type.WALL) && !arr.contains(up))
 			arr.add(up);
 
-		if (myMap.getLoc(down) != null && !myMap.getLoc(down).contains(Map.Type.WALL))
+		if (myMap.getLoc(down) != null && !myMap.getLoc(down).contains(Map.Type.GHOST) && !myMap.getLoc(down).contains(Map.Type.WALL) && !arr.contains(down))
 			arr.add(down);
 
-		return arr;			
+		if (myMap.getLoc(upRight) != null && !myMap.getLoc(upRight).contains(Map.Type.GHOST) && !myMap.getLoc(upRight).contains(Map.Type.WALL) && !arr.contains(upRight))
+			arr.add(upRight);
+
+		if (myMap.getLoc(upLeft) != null && !myMap.getLoc(upLeft).contains(Map.Type.GHOST) && !myMap.getLoc(upLeft).contains(Map.Type.WALL) && !arr.contains(upLeft))
+			arr.add(upLeft);
+
+		if (myMap.getLoc(downRight) != null && !myMap.getLoc(downRight).contains(Map.Type.GHOST) && !myMap.getLoc(downRight).contains(Map.Type.WALL) && !arr.contains(downRight))
+			arr.add(downRight);
+
+		if (myMap.getLoc(downLeft) != null && !myMap.getLoc(downLeft).contains(Map.Type.GHOST) && !myMap.getLoc(downLeft).contains(Map.Type.WALL) && !arr.contains(downLeft))
+			arr.add(downLeft);
+
+		return arr;		
 	}
 
 	public boolean move() {
