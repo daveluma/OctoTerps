@@ -32,8 +32,8 @@ public class PacMan{
 		Location downLeft = new Location(x + 1, y + 1);
 
 		// .toString().compareTo("[WALL]") != 0
-		if (myMap.getLoc(right) != null && !myMap.getLoc(right).contains(Map.Type.GHOST) && !myMap.getLoc(right).contains(Map.Type.WALL) && !arr.contains(right))
-			arr.add(right);
+// 		if (myMap.getLoc(right) != null && !myMap.getLoc(right).contains(Map.Type.GHOST) && !myMap.getLoc(right).contains(Map.Type.WALL) && !arr.contains(right))
+// 			arr.add(right);
 
 		if (myMap.getLoc(left) != null && !myMap.getLoc(left).contains(Map.Type.GHOST) && !myMap.getLoc(left).contains(Map.Type.WALL) && !arr.contains(left))
 			arr.add(left);
@@ -62,7 +62,6 @@ public class PacMan{
 
 	public boolean move() {
 		ArrayList<Location> valid_moves = new ArrayList<Location>();
-		valid_moves = get_valid_moves();
 
 		Random r = new Random();
 		this.myLoc = valid_moves.get(r.nextInt(valid_moves.size()));
@@ -80,16 +79,16 @@ public class PacMan{
 		Location up = new Location(x, y - 1);
 		Location down = new Location(x, y + 1);
 		
-		if (myMap.getLoc(right) != null && myMap.getLoc(right).toString().contains("GHOST")) {
+		if (myMap.getLoc(right).toString().contains("GHOST")) {
 			return true;
 		}
-		if (myMap.getLoc(left) != null && myMap.getLoc(left).toString().contains("GHOST")) {
+		if (myMap.getLoc(left).toString().contains("GHOST")) {
 			return true;
 		}
-		if (myMap.getLoc(up) != null && myMap.getLoc(up).toString().contains("GHOST")) {
+		if (myMap.getLoc(up).toString().contains("GHOST")) {
 			return true;
 		}
-		if (myMap.getLoc(down) != null && myMap.getLoc(down).toString().contains("GHOST")) {
+		if (myMap.getLoc(down).toString().contains("GHOST")) {
 			return true;
 		}
 
@@ -97,7 +96,7 @@ public class PacMan{
 	}
 
 	public JComponent consume() { 
-		if (this.myMap.getLoc(this.myLoc).contains(Map.Type.COOKIE)) {	
+		if (!this.myMap.getLoc(this.myLoc).contains(Map.Type.COOKIE)) {
 			return this.myMap.eatCookie(String.format("tok_x%s_y%s", this.myLoc.x, this.myLoc.y));	
 		}
  		return null;
