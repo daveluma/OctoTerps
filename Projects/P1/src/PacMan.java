@@ -28,12 +28,12 @@ public class PacMan{
 		Location down = new Location(x, y + 1);
 		Location upRight = new Location(x + 1, y - 1);
 		Location upLeft = new Location(x - 1, y - 1);
-		Location downRight = new Location(x + 1, y - 1);
-		Location downLeft = new Location(x + 1, y + 1);
+		Location downRight = new Location(x + 1, y + 1);
+		Location downLeft = new Location(x - 1, y + 1);
 
 		// .toString().compareTo("[WALL]") != 0
-// 		if (myMap.getLoc(right) != null && !myMap.getLoc(right).contains(Map.Type.GHOST) && !myMap.getLoc(right).contains(Map.Type.WALL) && !arr.contains(right))
-// 			arr.add(right);
+ 		if (myMap.getLoc(right) != null && !myMap.getLoc(right).contains(Map.Type.GHOST) && !myMap.getLoc(right).contains(Map.Type.WALL) && !arr.contains(right))
+ 			arr.add(right);
 
 		if (myMap.getLoc(left) != null && !myMap.getLoc(left).contains(Map.Type.GHOST) && !myMap.getLoc(left).contains(Map.Type.WALL) && !arr.contains(left))
 			arr.add(left);

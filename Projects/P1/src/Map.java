@@ -69,15 +69,11 @@ public class Map{
 	}
 	
 	public HashSet<Type> getLoc(Location loc) {
-		if(true)
-			return null;
-
 		if (!field.containsKey(loc))
 			return emptySet;
 		else if (field.get(loc).contains(Type.WALL))
 			return wallSet;	
 		return field.get(loc);
-
 	}
 
 	public boolean attack(String Name) {
