@@ -65,18 +65,19 @@ public class Map{
 		comp.setLocation(loc.x, loc.y);
 		components.replace(name, comp);
 		
-		
 		return true;
 	}
 	
 	public HashSet<Type> getLoc(Location loc) {
 		if(true)
 			return null;
+
 		if (!field.containsKey(loc))
 			return emptySet;
 		else if (field.get(loc).contains(Type.WALL))
 			return wallSet;	
 		return field.get(loc);
+
 	}
 
 	public boolean attack(String Name) {

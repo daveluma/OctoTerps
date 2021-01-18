@@ -56,8 +56,9 @@ public class PacMan{
 		if (myMap.getLoc(downLeft) != null && !myMap.getLoc(downLeft).contains(Map.Type.GHOST) && !myMap.getLoc(downLeft).contains(Map.Type.WALL) && !arr.contains(downLeft))
 			arr.add(downLeft);
 
-		return arr;		
+		return arr;
 	}
+
 
 	public boolean move() {
 		ArrayList<Location> valid_moves = new ArrayList<Location>();
