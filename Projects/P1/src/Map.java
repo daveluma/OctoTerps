@@ -81,7 +81,38 @@ public class Map{
 	}
 
 	public boolean attack(String Name) {
-		return true;
+		//check if Ghost & Pacman have a location and component
+		if (locations.containsKey(Name) && components.containsKey(Name) && locations.containsKey("pacman") && components.containsKey("pacman")) {
+					
+					Location ghost_coord = locations.get(Name);
+
+					Location pac_coord = locations.get("pacman");
+					
+					//check if ghost is within pacman's vicinity
+					int x = ghost_coord.x;
+					int y = ghost_coord.y;
+					
+					for (int i = x-1; i <= x+1; i++) {
+						for (int j = y-1; j <= y+1; j++) { 
+							//Check coordinates around the ghost
+							if ( (i != x || j != y) && i >= 0 && j >= 0) {
+									
+								//pacman is found in vicinity
+								if (pac_coord.x == i && pac_coord.y == j) {
+										
+									//remove pacman
+									locations.remove("pacman");
+									components.remove("pacman");
+										
+									//update game
+									gameOver = true;
+									return true;
+								}
+							}
+						}
+					}
+				}
+				return false;
 	}
 	
 	public JComponent eatCookie(String name) {
