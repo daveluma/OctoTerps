@@ -116,12 +116,12 @@ public class Map{
 		//the id for a cookie at (10, 1) is tok_x10_y1
 		Location loc = this.locations.get(name);
     
-		if(loc == null || loc.x == null || loc.y == null)
+		if (loc == null) {
 			return null;
-    
+		}
 		JComponent comp = this.components.get("tok_x"+loc.x+"_y"+loc.y);
 		if(comp == null)
-			return null;	
+			return null;
 		this.field.get(loc).remove(Type.COOKIE);
 		this.cookies++;
 		return comp;
