@@ -24,8 +24,8 @@ public class Ghost{
 		Location down = new Location(x, y + 1);
 
 		// .toString().compareTo("[WALL]") != 0
-// 		if (myMap.getLoc(right) != null && !myMap.getLoc(right).contains(Map.Type.WALL))
-// 			arr.add(right);
+ 		if (myMap.getLoc(right) != null && !myMap.getLoc(right).contains(Map.Type.WALL))
+ 			arr.add(right);
 
 		if (myMap.getLoc(left) != null && !myMap.getLoc(left).contains(Map.Type.WALL))
 			arr.add(left);
@@ -47,31 +47,21 @@ public class Ghost{
 		this.myLoc = valid_moves.get(r.nextInt(valid_moves.size()));
 		myMap.move(myName, myLoc, Map.Type.GHOST);
 				
-		return false;
+		return true;
 	}
 
 	public boolean is_pacman_in_range() { 
 		int x = this.myLoc.x;
 		int y = this.myLoc.y;
 
-		Location right = new Location(x + 1, y);
-		Location left = new Location(x - 1, y);
-		Location up = new Location(x, y - 1);
-		Location down = new Location(x, y + 1);
-		
-		if (myMap.getLoc(right).toString().contains("PACMAN")) {
-			return true;
+	for (int i = x-1; i <= x+1; i++){
+		for (int j = y-1; j <= y+1; j++){
+			if ((i != x || j != y) && i >= 0 && j >= 0 && myMap.getLoc(new Location(i, j)).toString().contains("PACMAN")) {
+				return true;
+			}
 		}
-		if (myMap.getLoc(left).toString().contains("PACMAN")) {
-			return true;
-		}
-		if (myMap.getLoc(up).toString().contains("PACMAN")) {
-			return true;
-		}
-		if (myMap.getLoc(down).toString().contains("PACMAN")) {
-			return true;
-		}
-
+	}
+	
 		return false;
 	}
 
