@@ -54,24 +54,14 @@ public class Ghost{
 		int x = this.myLoc.x;
 		int y = this.myLoc.y;
 
-		Location right = new Location(x + 1, y);
-		Location left = new Location(x - 1, y);
-		Location up = new Location(x, y - 1);
-		Location down = new Location(x, y + 1);
-		
-		if (myMap.getLoc(right).toString().contains("PACMAN")) {
-			return true;
+	for int i = x-1; i <= x+1; i++){
+		for int j = y-1; j <= y+1; j++){
+			if ((i != x || j != y) && i >= 0 && j >= 0 && myMap.getLoc(new Location(i, j)).toString().contains("PACMAN")) {
+				return true;
+			}
 		}
-		if (myMap.getLoc(left).toString().contains("PACMAN")) {
-			return true;
-		}
-		if (myMap.getLoc(up).toString().contains("PACMAN")) {
-			return true;
-		}
-		if (myMap.getLoc(down).toString().contains("PACMAN")) {
-			return true;
-		}
-
+	}
+	
 		return false;
 	}
 

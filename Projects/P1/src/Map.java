@@ -65,7 +65,7 @@ public class Map{
 		comp.setLocation(loc.x, loc.y);
 		components.replace(name, comp);
 		
-		return false;
+		return true;
 	}
 	
 	public HashSet<Type> getLoc(Location loc) {
