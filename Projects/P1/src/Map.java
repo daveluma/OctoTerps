@@ -93,8 +93,8 @@ public class Map{
 			return null;
 		
 		this.field.get(loc).remove(Type.COOKIE);
-		locations.remove("tok_x"+cookieLoc.x+"_y"+cookieLoc.y);
-		components.remove("tok_x"+cookieLoc.x+"_y"+cookieLoc.y);
+		locations.remove("tok_x"+loc.x+"_y"+loc.y);
+		components.remove("tok_x"+loc.x+"_y"+loc.y);
 		this.cookies++;
 		return comp;
 	}
