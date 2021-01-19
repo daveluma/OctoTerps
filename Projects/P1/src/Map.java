@@ -88,13 +88,10 @@ public class Map{
 		//update locations, components, field, and cookies
 		//the id for a cookie at (10, 1) is tok_x10_y1
 		Location loc = this.locations.get(name);
-		JComponent comp = this.components.get("tok_x"+loc.x+"_y"+loc.y);
-		if(comp == null)
+		if(loc == null)
 			return null;
-		
+		JComponent comp = this.components.get("tok_x"+loc.x+"_y"+loc.y);	
 		this.field.get(loc).remove(Type.COOKIE);
-		locations.remove("tok_x"+loc.x+"_y"+loc.y);
-		components.remove("tok_x"+loc.x+"_y"+loc.y);
 		this.cookies++;
 		return comp;
 	}
