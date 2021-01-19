@@ -65,33 +65,65 @@ public class Map{
 		comp.setLocation(loc.x, loc.y);
 		components.replace(name, comp);
 		
-		return false;
+		return true;
 	}
 	
 	public HashSet<Type> getLoc(Location loc) {
-		if(true)
-			return null;
-
 		if (!field.containsKey(loc))
 			return emptySet;
 		else if (field.get(loc).contains(Type.WALL))
 			return wallSet;	
 		return field.get(loc);
-
 	}
 
 	public boolean attack(String Name) {
-		return true;
+		//check if Ghost & Pacman have a location and component
+		if (locations.containsKey(Name) && components.containsKey(Name) && locations.containsKey("pacman") && components.containsKey("pacman")) {
+					
+					Location ghost_coord = locations.get(Name);
+
+					Location pac_coord = locations.get("pacman");
+					
+					//check if ghost is within pacman's vicinity
+					int x = ghost_coord.x;
+					int y = ghost_coord.y;
+					
+					for (int i = x-1; i <= x+1; i++) {
+						for (int j = y-1; j <= y+1; j++) { 
+							//Check coordinates around the ghost
+							if ( (i != x || j != y) && i >= 0 && j >= 0) {
+									
+								//pacman is found in vicinity
+								if (pac_coord.x == i && pac_coord.y == j) {
+										
+									//remove pacman
+									locations.remove("pacman");
+									components.remove("pacman");
+										
+									//update game
+									gameOver = true;
+									return true;
+								}
+							}
+						}
+					}
+				}
+				return false;
 	}
 	
 	public JComponent eatCookie(String name) {
 		//update locations, components, field, and cookies
 		//the id for a cookie at (10, 1) is tok_x10_y1
-		this.cookies++;
 		Location loc = this.locations.get(name);
-		JComponent comp = this.components.get(name);
+    
+		if (loc == null) {
+			return null;
+		}
+		JComponent comp = this.components.get("tok_x"+loc.x+"_y"+loc.y);
+		if(comp == null)
+			return null;
 		this.field.get(loc).remove(Type.COOKIE);
-
+		this.cookies++;
 		return comp;
 	}
 }
