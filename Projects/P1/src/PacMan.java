@@ -65,9 +65,7 @@ public class PacMan{
 		valid_moves = get_valid_moves();
 		Random r = new Random();
 		this.myLoc = valid_moves.get(r.nextInt(valid_moves.size()));
-		myMap.move(myName, myLoc, Map.Type.PACMAN);
-
-		return true;
+		return myMap.move(myName, myLoc, Map.Type.PACMAN);
 	}
 
 	public boolean is_ghost_in_range() { 
